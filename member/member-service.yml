@@ -1,3 +1,2 @@
-service:
-	name: member
+server:
 	port: 8082
