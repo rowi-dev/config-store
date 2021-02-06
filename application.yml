@@ -1,19 +1,13 @@
-management:
-	endpoints:
-		web:
-			exposure:
-				include: '*'
+server:
+  port: 8191
 spring:
-	datasource:
-		url: jdbc:postgresql://localhost:5432/demo_db
-		username: postgres
-		password: 123
-		driver-class-name: org.postgresql.Driver
-		hikari:
-			schema: sample
-	jpa:
-		hibernate:
-			ddl-auto: update
-			naming:
-				physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-		database-platform: org.hibernate.dialect.PostgreSQLDialect
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/krish/spring-cloud-config
+          search-paths:
+           - '*service'
+
+
+
